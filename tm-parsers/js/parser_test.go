@@ -56,7 +56,6 @@ var parseTests = []struct {
 		`/*no expectations*/ for(async of=>5;;) {}`,
 		`@«a».«b» class a{}`,
 		`function assert(actual: any): asserts «actual» is «foo» {}`,
-		`function assert(actual: any): asserts «this» is number {}`,
 		`function foo(a) : typeof «a».«b».«c» {}`,
 	}},
 	{js.Javascript, js.NameIdent, []string{
@@ -1123,6 +1122,7 @@ var parseTests = []struct {
 		`class Foo {
 		   add(operand: number): «this» {}
 		 }`,
+		`function assert(actual: any): asserts «this» is number {}`,
 	}},
 	{js.Typescript, js.TypeName, []string{
 		`function foo<T>() : «T» {}`,

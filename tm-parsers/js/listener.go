@@ -173,21 +173,21 @@ const (
 	JSXLiteral
 	JSXExpr // Expr?
 	JSXText
-	JSXSpreadExpr    // Expr?
-	TsConditional    // check=TsType ext=TsType truet=TsType falset=TsType
-	TypePredicate    // paramref=ReferenceIdent TsType
-	AssertsType      // ReferenceIdent TsType?
-	TypeParameters   // (TypeParameter)+
-	TypeParameter    // NameIdent TypeConstraint? TsType?
-	TypeConstraint   // TsType
-	TypeArguments    // (TsType)+
-	UnionType        // inner=(TsType)*
-	IntersectionType // inner=(TsType)*
-	KeyOfType        // TsType
-	UniqueType       // TsType
-	ReadonlyType     // TsType
-	TypeVar          // ReferenceIdent
+	JSXSpreadExpr // Expr?
+	TsConditional // check=TsType ext=TsType truet=TsType falset=TsType
+	TypePredicate // paramref=ReferenceIdent TsType
 	ThisType
+	AssertsType       // ReferenceIdent? ThisType? TsType?
+	TypeParameters    // (TypeParameter)+
+	TypeParameter     // NameIdent TypeConstraint? TsType?
+	TypeConstraint    // TsType
+	TypeArguments     // (TsType)+
+	UnionType         // inner=(TsType)*
+	IntersectionType  // inner=(TsType)*
+	KeyOfType         // TsType
+	UniqueType        // TsType
+	ReadonlyType      // TsType
+	TypeVar           // ReferenceIdent
 	NonNullableType   // TsType
 	NullableType      // TsType
 	ParenthesizedType // TsType
@@ -414,6 +414,7 @@ var nodeTypeStr = [...]string{
 	"JSXSpreadExpr",
 	"TsConditional",
 	"TypePredicate",
+	"ThisType",
 	"AssertsType",
 	"TypeParameters",
 	"TypeParameter",
@@ -425,7 +426,6 @@ var nodeTypeStr = [...]string{
 	"UniqueType",
 	"ReadonlyType",
 	"TypeVar",
-	"ThisType",
 	"NonNullableType",
 	"NullableType",
 	"ParenthesizedType",
